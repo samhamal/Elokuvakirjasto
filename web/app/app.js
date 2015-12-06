@@ -14,6 +14,14 @@ Moviedb.config(function($routeProvider) {
       controller: 'AddMovies',
       templateUrl: 'app/views/addmovie.html'
     })
+    .when('/movies/:key', {
+      controller: 'ShowMovie',
+      templateUrl: 'app/views/showmovie.html'
+    })
+    .when('/movies/:key/edit', {
+      controller: 'EditMovie',
+      templateUrl: 'app/views/editmovie.html'
+    })
     .otherwise({
       redirectTo: '/'
     });

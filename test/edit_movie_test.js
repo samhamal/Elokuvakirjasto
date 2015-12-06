@@ -5,7 +5,7 @@ describe('Edit movie', function(){
 
   	beforeEach(function(){
   		// Lisää moduulisi nimi tähän
-    	module('MyAwesomeModule');
+    	module('Moviedb');
 
     	FirebaseServiceMock = (function(){
 			return {
@@ -26,7 +26,7 @@ describe('Edit movie', function(){
 	    inject(function($controller, $rootScope) {
 	      scope = $rootScope.$new();
 	      // Muista vaihtaa oikea kontrollerin nimi!
-	      controller = $controller('MyAwesomeController', {
+	      controller = $controller('EditMovie', {
 	        $scope: scope,
 	        FirebaseService: FirebaseServiceMock,
 	        $routeParams: RouteParamsMock
@@ -47,7 +47,7 @@ describe('Edit movie', function(){
   		expect(true).toBe(false);
   	})
 
-  	/* 
+  	/*
   	* Testaa, että käyttäjä pystyy muokkaamaan elokuvaa, jos tiedot ovat oikeat
 	* Testaa myös, että Firebasea käyttävästä palvelusta kutsutaan oikeaa funktiota,
   	* käyttämällä toBeCalled-oletusta.
