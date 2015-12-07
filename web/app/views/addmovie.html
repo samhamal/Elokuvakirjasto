@@ -1,25 +1,25 @@
 <form name="lomake">
-  <h2>Lisää leffa</h2>
+  <h2>Add movie</h2>
             <p>
-                <label>Elokuvan nimi</label>
+                <label>Title</label>
                 <input type="text" ng-model="title" name="title" required>
             </p>
             <p>
-                <label>Ohjaajan nimi</label>
+                <label>Director</label>
                 <input type="text" ng-model="director" name="director" required>
             </p>
             <p>
-                <label>Julkaisuvuosi</label>
+                <label>Release year</label>
                 <input type="text" ng-model="released" name="released" required  ng-pattern="/^[0-9]{4,}$/">
             </p>
             <div ng-show="lomake.released.$invalid && lomake.released.$dirty">
-            Julkaisuvuosi ei ole validi!
+            Release year is not valid!
             </div>
             <p>
-                <label>Elokuvan kuvaus</label>
+                <label>Description</label>
                 <input type="text" ng-model="description" name="description" required>
             </p>
             <p>
-                <button ng-click="addMovie()" ng-disabled="lomake.$invalid">Lähetä</button>
+                <button ng-click="addMovie()" ng-disabled="lomake.$invalid">Save</button>
             </p>
 </form>

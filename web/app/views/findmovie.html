@@ -1,0 +1,26 @@
+<form name="lomake">
+  <h2>Find movie</h2>
+            <p>
+                <label>Title</label>
+                <input type="text" ng-model="title" name="title" required>
+            </p>
+            <p>
+                <label>Release year</label>
+                <input type="text" ng-model="released" name="released">
+            </p>
+            <p>
+                <button ng-click="findMovie()">Search</button>
+            </p>
+</form>
+<div ng-show="searchDone && notFound">
+  Haulla ei löytynyt elokuvia.
+</div>
+<div ng-show="searchDone && !notFound">
+Haulla löytyi {{movies.Search.length}}
+<span ng-pluralize count="movies.Search.length" when="{ '0': 'elokuvaa', 'one': 'elokuva', 'other': 'elokuvaa' }">
+</span>
+
+<ul>
+  <li ng-repeat="movie in movies.Search"><a ng-href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a> ({{movie.Year}})</li>
+</ul>
+</div>
